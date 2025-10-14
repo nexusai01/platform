@@ -1,5 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+    <style>
+        /* ===============================
+   Neon Glow Effects
+   =============================== */
+
+/* Glowing border around the waitlist card */
+.waitlist-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.waitlist-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: linear-gradient(90deg, #7e22ce, #10b981, #7e22ce);
+  background-size: 400% 400%;
+  border-radius: 16px;
+  z-index: 0;
+  animation: glowMove 6s linear infinite;
+  opacity: 0.4;
+}
+
+.waitlist-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover lift effect */
+.waitlist-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(126, 34, 206, 0.4);
+}
+
+/* Animate the glowing gradient border */
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        /* Glass Effect for Sections */
+header, section, footer {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+        /* ===============================
+           Animated Gradient Background
+           =============================== */
+        body {
+          margin: 0;
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(-45deg, #0f172a, #1e1b4b, #7e22ce, #10b981);
+          background-size: 400% 400%;
+          animation: gradientMove 12s ease infinite;
+          color: #fff;
+          min-height: 100vh;
+        }
+      
+        @keyframes gradientMove {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      </style>
+      
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +102,8 @@
     />
   </head>
 
-  <body class="bg-[#0B0E13] text-white font-sans">
+  <body class="text-white font-sans">
+
     <!-- Navbar -->
     <header class="flex justify-between items-center px-6 py-4 border-b border-gray-800">
       <h1 class="text-2xl font-bold text-purple-400">PakNexusAI</h1>
@@ -44,7 +129,7 @@
       </p>
 
       <!-- Waitlist Card -->
-      <div class="bg-[#10151F] border border-purple-500 rounded-2xl shadow-lg shadow-purple-900/40 max-w-md mx-auto p-6">
+      <div class="waitlist-card bg-[#10151F] border border-purple-500 rounded-2xl shadow-lg shadow-purple-900/40 max-w-md mx-auto p-6">
         <h3 class="text-xl font-semibold mb-4">Join the Exclusive Waitlist</h3>
         <form class="space-y-4">
           <input
