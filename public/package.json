@@ -1,0 +1,17 @@
+{
+  "name": "paknexusai-website",
+  "version": "1.0.0",
+  "description": "PakNexusAI – AI-powered content creation platform.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "PakNexusAI Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": "14.x"
+  }
+}
